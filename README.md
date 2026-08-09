@@ -10,7 +10,7 @@ Production-grade genomics workflow combining **Galaxy/Snakemake**, **GATK4**, **
 
 ## 🚀 Quick Start & Installation
 \`\`\`bash
-git clone https://github.com/JStefRenuns/Bioinformatic-MultiTool.git
+git clone [https://github.com/JStefRenuns/Bioinformatic-MultiTool.git](https://github.com/JStefRenuns/Bioinformatic-MutiTool/blob/main/README.md)
 cd bioinformatics-genomics-pipeline
 conda env create -f environment.yml
 conda activate bioinfo-master
