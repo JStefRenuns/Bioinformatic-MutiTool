@@ -10,20 +10,20 @@ Production-grade genomics workflow combining **Galaxy/Snakemake**, **GATK4**, **
 
 ## 🚀 Quick Start & Installation
 \`\`\`bash
-git clone [https://github.com/JStefRenuns/Bioinformatic-MultiTool.git](https://github.com/JStefRenuns/Bioinformatic-MutiTool/blob/main/README.md)
-cd bioinformatics-genomics-pipeline
+git clone https://github.com/JStefRenuns/Bioinformatic-MutiTool.git
+cd Bioinformatic-MutiTool
 conda env create -f environment.yml
 conda activate bioinfo-master
 snakemake --cores 4
 \`\`\`
 
 ## 📈 Results & Visualizations
-### Functional Biomarker t-SNE Clustering
+
 ### Data Analysis Pipeline
-* **t-SNE Script:** You can review the complete data ingestion and scaling code in the [t-SNE Clustering Script](https://github.com/JStefRenuns/Bioinformatic-MutiTool/blob/main/scripts/t-SNE_clustering)
+* **t-SNE Script:** Review the complete data ingestion and scaling code in the [t-SNE Clustering Script](scripts/tsne_clustering.py)
 
 ### GATK Variant Quality & Depth QC
-* **GATK QC Script:** You can review the complete data ingestion and scaling code in the [GATK QC Script](https://github.com/JStefRenuns/Bioinformatic-MutiTool/blob/main/scripts/GATK_QC)
+* **GATK QC Script:** Review the complete variant quality control code in the [GATK QC Script](scripts/gatk_qc.py)
 
 ### Pipeline Results & Execution
 * **t-SNE Clustering:**
