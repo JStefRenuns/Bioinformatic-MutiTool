@@ -36,7 +36,7 @@ snakemake --cores 4
 > **Production-Grade Pipeline Component:** Beyond Snakemake, this repository includes a modular Nextflow DSL2 workflow configuration designed for scalable, cloud-ready genomic processing.
 
 ### 🚀 Nextflow Pipeline Execution & Code
-* **Workflow Implementation:** Review the core orchestration logic, channel management, and process definitions in the [Nextflow Example Pipeline](nextflow_example.nf).
+* **Workflow Implementation:** Review the core orchestration logic, channel management, and process definitions in the [Nextflow Example Pipeline](scripts/nextflow_example.nf).
 * **Pipeline Features:** Leverages containerized execution profiles (Docker/Singularity) and automated parallel sample processing for robust RNA-Seq or variant workflows. * **Nextflow Pipeline:** Review the workflow orchestration code in the [Nextflow Example Pipeline](scripts/nextflow_example.nf) 
 
 ## 🧬 Differential Expression Analysis (DESeq2)
