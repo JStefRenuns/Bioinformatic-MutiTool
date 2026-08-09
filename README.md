@@ -19,7 +19,9 @@ snakemake --cores 4
 
 ## 📈 Results & Visualizations
 ### Functional Biomarker t-SNE Clustering
-![t-SNE Clustering](comprehensive_results/functional_tsne.png)
+### Data Analysis Pipeline
+* **t-SNE Script:** You can review the complete data ingestion and scaling code in the [t-SNE Clustering Script](scripts/tsne_clustering.py).
+![t-SNE Clustering](comprehensive_results/functional_ts.png)
 
 ### GATK Variant Quality & Depth QC
 ![GATK QC](comprehensive_results/gatk_qc.png)
