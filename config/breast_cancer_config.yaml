@@ -1,0 +1,20 @@
+# GATK Best Practices Pipeline Configuration - Breast Cancer Cohort
+project_name: "breast_cancer_genomics_analysis"
+workflow: "germline_and_somatic_variant_discovery"
+
+# Input configuration for breast cancer dataset samples (Matched Tumor-Normal pairs)
+samples:
+  - "patient_01_normal"
+  - "patient_01_tumor"
+  - "patient_02_normal"
+  - "patient_02_tumor"
+
+paths:
+  raw_reads: "data/raw/breast_cancer/"
+  reference_genome: "data/reference/hg38_human_assembly.fasta"
+  known_sites: "data/reference/dbSNP_common_155.vcf.gz"
+  output_dir: "results/gatk/breast_cancer/"
+
+resources:
+  threads: 16
+  java_mem: "32G"
