@@ -49,4 +49,4 @@ The pipeline integrates automated RNA-Seq quantification using STAR followed by 
 ### 📂 Pipeline Artifacts & Scripts
 * **Analysis Script:** Review the core statistical modeling code in [DESeq2 Script](scripts/run_deseq2.R).
 * **Execution Log:** Check the processing output details in [DESeq2 Execution Log](logs/deseq2/run.log).
-* **Result Data:** Access the final tabulated gene metrics in [Differential Expression Results](results/deseq2_differential_expression_results_plot.png).
+* **Result Data:** Access the final tabulated gene metrics in [Differential Expression Log](logs/deseq2/gene-metrics.log).
