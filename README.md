@@ -24,5 +24,6 @@ snakemake --cores 4
 ![t-SNE Clustering](comprehensive_results/functional_ts.png)
 
 ### GATK Variant Quality & Depth QC
+* **GATK QC Script:** You can review the complete data ingestion and scaling code in the [GATK QC Script](https://github.com/JStefRenuns/Bioinformatic-MutiTool/blob/main/scripts/GATK_QC)
 ![GATK QC](comprehensive_results/gatk_qc.png)
 
