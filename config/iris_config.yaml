@@ -1,0 +1,19 @@
+# GATK Best Practices Pipeline Configuration - Iris Cohort
+project_name: "iris_genomics_analysis"
+workflow: "germline_short_variant_discovery"
+
+# Input configuration for iris dataset samples
+samples:
+  - "iris_wild_1"
+  - "iris_wild_2"
+  - "iris_cultivar_1"
+
+paths:
+  raw_reads: "data/raw/iris/"
+  reference_genome: "data/reference/iris_assembly.fasta"
+  known_sites: "data/reference/iris_known_variants.vcf.gz"
+  output_dir: "results/gatk/iris/"
+
+resources:
+  threads: 8
+  java_mem: "16G"
