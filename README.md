@@ -1,5 +1,5 @@
 # Bioinformatic-MutiTool
-Translational Bioinformatics Multi-Tool Pipeline
+Example of Translational Bioinformatics Multi-Tool Pipeline
 Production-grade genomics workflow combining **Galaxy/Snakemake**, **GATK4**, **Julia/Pandas**, **Docker**, and **Nextflow** benchmarked on the Breast Cancer Wisconsin diagnostic dataset.
 
 ## 📊 Pipeline Architecture & Tools
