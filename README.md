@@ -31,7 +31,7 @@ snakemake --cores 4
 * **GATK QC:**
   ![GATK QC Plot](results/gatk_qc.png)
 
-  * **Nextflow Pipeline:** Review the workflow orchestration code in the [Nextflow Example Pipeline](nextflow_example.nf)
+  * **Nextflow Pipeline:** Review the workflow orchestration code in the [Nextflow Example Pipeline](scripts/nextflow_example.nf)
  
 ## 🧬 Differential Expression Analysis (DESeq2)
 
