@@ -33,12 +33,12 @@ snakemake --cores 4
 
   * **Nextflow Pipeline:** Review the workflow orchestration code in the [Nextflow Example Pipeline](nextflow_example.nf)
  
-#DESeq2 Differential Expression Analysis
+#  DESeq2 Differential Expression Analysis
 The workflow includes an R-based DESeq2 analysis step (scripts/run_deseq2.R) that processes count data from STAR and generates a results CSV alongside a visualization of differentially expressed genes.
 
-*Analysis Log: Review the execution log for the R analysis step in DESeq2 Execution Log.
+*  Analysis Log: Review the execution log for the R analysis step in DESeq2 Execution Log.
 
-*Differential Expression Results: The resulting table of identified DEGs can be found in DESeq2 Results CSV.
+Differential Expression Results: The resulting table of identified DEGs can be found in DESeq2 Results CSV.
 
-#Differential Expression Visualization
+#  Differential Expression Visualization
 This volcano plot visualizes the results of the DESeq2 analysis, highlighting statistically significant up- and down-regulated genes (in orange) based on fold change and adjusted p-value thresholds
