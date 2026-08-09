@@ -1,0 +1,52 @@
+SAMPLES = ["control_1", "control_2", "treatment_1", "treatment_2"]
+
+rule all:
+    input:
+        expand("results/qc/{sample}_fastqc.html", sample=SAMPLES),
+        "results/deseq2/differential_expression_results.csv"
+
+rule fastqc:
+    input:
+        "data/raw/{sample}.fastq.gz"
+    output:
+        html="results/qc/{sample}_fastqc.html",
+        zip="results/qc/{sample}_fastqc.zip"
+    threads: 2
+    log:
+        "logs/fastqc/{sample}.log"
+    shell:
+        """
+        fastqc -t {threads} -o results/qc {input} > {log} 2>&1
+        """
+
+rule star_alignment_and_quant:
+    input:
+        fq="data/raw/{sample}.fastq.gz",
+        idx="data/reference/star_index"
+    output:
+        bam="results/alignments/{sample}_Aligned.sortedByCoord.out.bam",
+        counts="results/alignments/{sample}_ReadsPerGene.out.tab"
+    threads: 8
+    log:
+        "logs/star/{sample}.log"
+    shell:
+        """
+        STAR --runThreadN {threads} \
+             --genomeDir {input.idx} \
+             --readFilesIn {input.fq} \
+             --readFilesCommand zcat \
+             --outFileNamePrefix results/alignments/{wildcards.sample}_ \
+             --outSAMtype BAM SortedByCoordinate \
+             --quantMode GeneCounts > {log} 2>&1
+        """
+
+rule deseq2_analysis:
+    input:
+        counts=expand("results/alignments/{sample}_ReadsPerGene.out.tab", sample=SAMPLES)
+    output:
+        results_csv="results/deseq2/differential_expression_results.csv",
+        volcano_plot="results/deseq2/volcano_plot.pdf"
+    log:
+        "logs/deseq2/run.log"
+    script:
+        "scripts/run_deseq2.R"
