@@ -53,4 +53,4 @@ The pipeline integrates automated RNA-Seq quantification using STAR followed by 
 * **Execution Log:** Check the processing output details in [DESeq2 Execution Log](logs/deseq2/run.log).
 * **Result Data:** Access the final tabulated gene metrics in [Differential Expression Log](logs/deseq2/gene_metrics.log).
 
-#  Currently optimising code for multiple config files to enhance output.
+###  Currently optimising code for multiple config files to enhance output.
