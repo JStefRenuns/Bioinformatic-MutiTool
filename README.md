@@ -37,12 +37,16 @@ snakemake --cores 4
 
 The pipeline integrates automated RNA-Seq quantification using STAR followed by statistical differential expression analysis via DESeq2. 
 
+## 🧬 Differential Expression Analysis (DESeq2)
+
+The pipeline integrates automated RNA-Seq quantification using STAR followed by statistical differential expression analysis via DESeq2.
+
 ### 📊 Results & Visualization
-* **Volcano Plot Visualization:** 
+* **Volcano Plot Visualization:**
   The plot below highlights statistically significant up- and down-regulated genes (highlighted in orange) based on log2 fold change and adjusted $p$-value thresholds.
-  ![DESeq2 Differential Expression Volcano Plot](results/deseq2/volcano_plot.png)
+  ![DESeq2 Differential Expression Volcano Plot](results/deseq2_differential_expression_results_plot.png)
 
 ### 📂 Pipeline Artifacts & Scripts
 * **Analysis Script:** Review the core statistical modeling code in [DESeq2 Script](scripts/run_deseq2.R).
 * **Execution Log:** Check the processing output details in [DESeq2 Execution Log](logs/deseq2/run.log).
-* **Result Data:** Access the final tabulated gene metrics in ![DESeq2 Differential Expression](results/deseq2_differential_expression_results_plot.png)
+* **Result Data:** Access the final tabulated gene metrics in [Differential Expression Results](results/deseq2_differential_expression_results_plot.png).
