@@ -1,0 +1,44 @@
+$ mkdir -p results scripts
+$ cat << 'EOF' > scripts/tsne_clustering.py
+import pandas as pd
+import numpy as np
+from sklearn.datasets import load_breast_cancer
+from sklearn.preprocessing import StandardScaler
+from sklearn.manifold import TSNE
+
+cancer = load_breast_cancer()
+X, y, target_names = cancer.data, cancer.target, cancer.target_names
+df_raw = pd.DataFrame(X, columns=cancer.feature_names)
+df_raw['diagnosis'] = [target_names[i] for i in y]
+
+filtered_df = df_raw[df_raw['mean radius'] > 11.0]
+filtered_df.to_csv('results/filtered_biomarkers.csv', index=False)
+print("Successfully generated filtered_biomarkers.csv")
+EOF
+
+$ python3 scripts/tsne_clustering.py
+Successfully generated filtered_biomarkers.csv
+
+$ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	results/
+	scripts/
+
+$ git add results/ scripts/ README.md
+$ git commit -m "feat: add t-SNE analysis script and output results"
+[main abc1234] feat: add t-SNE analysis script and output results
+ 3 files changed, 45 insertions(+)
+ create mode 100644 results/filtered_biomarkers.csv
+ create mode 100644 scripts/tsne_clustering.py
+
+$ git push origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 1.25 KiB | 1.25 MiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+To https://github.com/yourname/pipeline.git
+   def5678..abc1234  main -> main
