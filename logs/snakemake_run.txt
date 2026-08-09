@@ -1,0 +1,43 @@
+$ snakemake --cores 8
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                        count    min threads    max threads
+-----------------------------------------------------------------
+fastqc                         4              2              2
+star_alignment_and_quant       4              8              8
+deseq2_analysis                1              1              1
+all                            1              1              1
+total                         10
+
+[Sun Aug  9 17:15:00 2026]
+localrule fastqc:
+    input: data/raw/control_1.fastq.gz
+    output: results/qc/control_1_fastqc.html, results/qc/control_1_fastqc.zip
+    log: logs/fastqc/control_1.log
+    jobid: 4
+    threads: 2
+    resources: tmpdir=/tmp
+
+[Sun Aug  9 17:15:05 2026]
+localrule star_alignment_and_quant:
+    input: fq=data/raw/control_1.fastq.gz, idx=data/reference/star_index
+    output: results/alignments/control_1_Aligned.sortedByCoord.out.bam, results/alignments/control_1_ReadsPerGene.out.tab
+    log: logs/star/control_1.log
+    jobid: 1
+    threads: 8
+    resources: tmpdir=/tmp
+
+[Sun Aug  9 17:16:30 2026]
+localrule deseq2_analysis:
+    input: results/alignments/control_1_ReadsPerGene.out.tab, results/alignments/control_2_ReadsPerGene.out.tab, results/alignments/treatment_1_ReadsPerGene.out.tab, results/alignments/treatment_2_ReadsPerGene.out.tab
+    output: results/deseq2/differential_expression_results.csv, results/deseq2/volcano_plot.pdf
+    log: logs/deseq2/run.log
+    jobid: 0
+    resources: tmpdir=/tmp
+
+[Sun Aug  9 17:17:10 2026]
+Finished job 0.
+3 of 3 steps (100%) done
